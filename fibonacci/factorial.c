@@ -1,7 +1,7 @@
 //==============================================================================                          
 // 
 //==============================================================================                          
-//  Description............: Fibonacci series using recursion
+//  Description............: Factorial using recursion
 //  Author.................: Data Precog
 //  Email..................: info@dataprecog.com
 //  Date...................: 2003.04.02
@@ -24,27 +24,32 @@
 //================================================================================
 // UDF Prototypes
 //================================================================================
-int l_fibonacci(int n);
+int l_factorial(int n);
 
 //================================================================================
 // Main Function
 //================================================================================
 int main() {
-      int n = 6;
-      printf("%d\n", l_fibonacci(n));
+      int n = 4;
+      printf("%d\n", l_factorial(n));
 
       return 0;
 }
 
 //================================================================================
-// Function l_fibonacci:   returns the nth value of the Fibonacci sequence
+// Function l_factorial:   returns the factorial of n (n!)
 //================================================================================
-int l_fibonacci(int n) {
-      if (n <= 1)
-          return n;
-      return l_fibonacci(n - 1) + l_fibonacci(n - 2);
+int l_factorial(int n) {
+	// This "if" control block makes sure the factorial function is defined only for positive numbers including 0: N(0)
+	if (n < 0)
+		return -1;
+	else
+		if (n < 2)
+			return 1;
+		else
+			return n * l_factorial(n - 1);
 }
 
-//==============================================================================                          
+//================================================================================
 // EOF
-//==============================================================================                          
+//================================================================================
